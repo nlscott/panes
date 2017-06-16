@@ -16,7 +16,7 @@ gem list
 #### Usage:
 You must require 'panes' in your ruby file. Then you can run the command below to see all your options.
 ```ruby
-puts Panes.Options
+Panes.Options
 ```
 This will return:
 > - CFBundleIdentifier
@@ -29,7 +29,6 @@ This will return:
 > - Reset
 
 #### Examples ...
-See [this blog post](https://redlinetech.wordpress.com/2017/05/17/organizing-commands-in-apple-remote-desktop-with-the-help-of-ruby/) or the below examples:
 
 ####List CFBundleIdentifiers:
 
@@ -41,7 +40,7 @@ CFBundleIdentifier is a string usually in reverse DNS format, that specifies the
 ---
 ####Create a new "com.apple.systempreferences.plist":
 ```ruby
-puts Panes.CreateProfile
+Panes.CreateProfile
 ```
 If the file "/Library/Preferences/com.apple.systempreferences.plist" doesn't exist, it will be created.
 
@@ -51,7 +50,7 @@ There's no real reason to run this independently, it's used internally when the 
 ####Disable a Preference Pane:
 
 ``` ruby
-puts Panes.Disable(CFBundleIdentifier)
+Panes.Disable(CFBundleIdentifier)
 ```
 The heart of this gem is the Disable method. It takes a specific CFBundleIdentifier or multiple CFBundleIdentifiers.
 #####examples:
@@ -68,14 +67,14 @@ Panes.Disable(
 ---
 ####Enable a Preference Pane:
 ```ruby
-puts Panes.Enable("com.apple.preference.network")
+Panes.Enable("com.apple.preference.network")
 ```
 If you decide to enable a pane after it's been disable.
 
 ---
 ####List all Preference Panes:
 ```ruby
-puts Panes.List
+Panes.List
 ```
 you'll get a list of available preference panes:
 > - Accounts.prefPane
@@ -98,13 +97,13 @@ These are usually Panes that have been installed by a user like Adobe Flash or O
 ---
 ####List options:
 ```ruby
-puts Panes.Options
+Panes.Options
 ```
 Prints available methods
 
 ---
 ####Reset all changes:
 ```ruby
-puts Panes.Reset
+Panes.Reset
 ```
 This enables all panes and deletes the "/Library/Preferences/com.apple.systempreferences.plist" file

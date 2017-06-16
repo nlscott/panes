@@ -30,11 +30,13 @@ module Panes
 			end
 		end
 
+		final_list=[]
 		list_of_panes.each do |prePane|
 			plist = CFPropertyList::List.new(:file => "#{PATHTOPLIST}/#{prePane}/Contents/Info.plist")
 			results=CFPropertyList.native_types(plist.value)
-			puts results["CFBundleIdentifier"]
+			final_list << results["CFBundleIdentifier"]
 		end
+		return final_list
 	end
 
 	#print CFBundleIdentifier for items installed by the user, typical installs would be flash or java
@@ -48,11 +50,13 @@ module Panes
 			end
 		end
 
+		final_list=[]
 		list_of_panes.each do |prePane|
 			plist = CFPropertyList::List.new(:file => "/Library/PreferencePanes/#{prePane}/Contents/Info.plist")
 			results=CFPropertyList.native_types(plist.value)
-			puts results["CFBundleIdentifier"]
+			final_list << results["CFBundleIdentifier"]
 		end
+		return final_list
 	end
 
 
