@@ -140,7 +140,7 @@ module Panes
 			prefs.each do |check_a|
 				results["DisabledPreferencePanes"].each do |check_b|
 					if check_a == check_b 
-						puts results["DisabledPreferencePanes"].delete(check_a)
+						results["DisabledPreferencePanes"].delete(check_a)
 					end
 				end
 			end
