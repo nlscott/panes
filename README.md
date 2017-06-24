@@ -2,6 +2,11 @@
 
 This is tested on macOS 10.12 - 10.12.5. It may or may not work on other OS versions.
 
+
+For more usage see this
+[blog post](https://redlinetech.wordpress.com/2017/06/21/disable-system-preference-panes-in-macos/)
+
+<img src="https://redlinetech.files.wordpress.com/2017/06/disabled.png?w=625">
 #### To install:
 ```bash
 sudo gem install panes
