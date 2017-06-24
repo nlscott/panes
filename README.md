@@ -28,9 +28,9 @@ This will return:
 > - Options
 > - Reset
 
-#### Examples ...
+## Examples ...
 
-####List CFBundleIdentifiers:
+#### List CFBundleIdentifiers:
 
 ```ruby
 puts Panes.CFBundleIdentifier
@@ -38,7 +38,7 @@ puts Panes.CFBundleIdentifier
 CFBundleIdentifier is a string usually in reverse DNS format, that specifies the specific app type of the bundle. Used in macOS to specify Applications.
 
 ---
-####Create a new "com.apple.systempreferences.plist":
+#### Create a new "com.apple.systempreferences.plist":
 ```ruby
 Panes.CreateProfile
 ```
@@ -47,13 +47,13 @@ If the file "/Library/Preferences/com.apple.systempreferences.plist" doesn't exi
 There's no real reason to run this independently, it's used internally when the file isn't found.
 
 ---
-####Disable a Preference Pane:
+#### Disable a Preference Pane:
 
 ``` ruby
 Panes.Disable(CFBundleIdentifier)
 ```
 The heart of this gem is the Disable method. It takes a specific CFBundleIdentifier or multiple CFBundleIdentifiers.
-#####examples:
+##### examples:
 ```ruby
 #to disable one Pane
 Panes.Disable("com.apple.preference.network")
@@ -65,14 +65,14 @@ Panes.Disable(
  "com.apple.preferences.Bluetooth")
 ```
 ---
-####Enable a Preference Pane:
+#### Enable a Preference Pane:
 ```ruby
 Panes.Enable("com.apple.preference.network")
 ```
 If you decide to enable a pane after it's been disable.
 
 ---
-####List all Preference Panes:
+#### List all Preference Panes:
 ```ruby
 Panes.List
 ```
@@ -84,25 +84,25 @@ you'll get a list of available preference panes:
 > - and so forth ....
 
 ---
-####List Optional Preference Panes:
+#### List Optional Preference Panes:
 ```ruby
 puts Panes.OptionalCFBundleIdentifier
 ```
 These are usually Panes that have been installed by a user like Adobe Flash or Oracle Java
 
-  #####example:
+  ##### example:
 > - com.adobe.flashplayerpreferences
 > - com.oracle.java.JavaControlPanel
 
 ---
-####List options:
+#### List options:
 ```ruby
 Panes.Options
 ```
 Prints available methods
 
 ---
-####Reset all changes:
+#### Reset all changes:
 ```ruby
 Panes.Reset
 ```
