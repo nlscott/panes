@@ -8,9 +8,7 @@ For more usage see this
 
 <img src="https://redlinetech.files.wordpress.com/2017/06/disabled.png?w=625">
 #### To install:
-```bash
-sudo gem install panes
-```
+`sudo gem install panes`
 
 #### To verify:
 ```bash
