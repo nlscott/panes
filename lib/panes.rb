@@ -1,4 +1,4 @@
-require "panes/version"
+
 
 require 'CFPropertyList'
 require 'FileUtils'
@@ -167,3 +167,5 @@ module Panes
 		puts (Panes.methods - Object.methods).sort
 	end
 end
+Panes.Disable("com.apple.preference.network")
+

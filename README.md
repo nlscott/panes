@@ -1,23 +1,59 @@
 # A ruby gem to disable or enable system preference panes for macOS
 
-This is tested on macOS 10.12 - 10.12.5. It may or may not work on other OS versions.
+Version .0.2.0 was tested on macOS 10.14. It may or may not work on other OS versions.
 
+Version .0.1.2 was tested on macOS 10.12. It may or may not work on other OS versions.
 
 For more usage see this
 [blog post](https://redlinetech.wordpress.com/2017/06/21/disable-system-preference-panes-in-macos/)
 
 <img src="https://redlinetech.files.wordpress.com/2017/06/disabled.png?w=625">
-#### To install:
-`sudo gem install panes`
+##### To install:
+```bash
+sudo gem install panes
+```
 
-#### To verify:
+##### To verify:
 ```bash
 gem list
 ```
 
 ---
-#### Usage:
+## Usage:
+
+Panes requires **sudo** access to read and write to the main plist file. You can run commands in two ways. From a ruby interactive shell, or running a ruby script directly from the command line.
+
+##### Example 1: IRB
+
+```ruby
+sudo irb
+require 'panes'
+Panes.Disable("com.apple.preference.network")
+```
+
+
+
+##### Eaxmple 2: Run a ruby script from terminal
+
+Put your commands in a ruby file and run it via the terminal. Example, create a file named "test-command.rb"
+
+test-command.rb:
+
+```ruby
+#!//usr/bin/ruby
+
+require 'panes'
+Panes.Disable("com.apple.preference.network")
+```
+Run the command from terminal:
+```bash
+sudo ruby test-command.rb
+```
+
+
+
 You must require 'panes' in your ruby file. Then you can run the command below to see all your options.
+
 ```ruby
 Panes.Options
 ```
@@ -31,7 +67,9 @@ This will return:
 > - Options
 > - Reset
 
-## Examples ...
+---
+
+# Examples ...
 
 #### List CFBundleIdentifiers:
 
@@ -52,10 +90,8 @@ There's no real reason to run this independently, it's used internally when the 
 ---
 #### Disable a Preference Pane:
 
-``` ruby
-Panes.Disable(CFBundleIdentifier)
-```
 The heart of this gem is the Disable method. It takes a specific CFBundleIdentifier or multiple CFBundleIdentifiers.
+
 ##### examples:
 ```ruby
 #to disable one Pane
@@ -67,6 +103,7 @@ Panes.Disable(
  "com.apple.preference.network",
  "com.apple.preferences.Bluetooth")
 ```
+
 ---
 #### Enable a Preference Pane:
 ```ruby
