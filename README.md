@@ -1,13 +1,11 @@
 # A ruby gem to disable or enable system preference panes for macOS
 
-Version .0.2.0 was tested on macOS 10.14. It may or may not work on other OS versions.
+> **Note:** This has not been fully tested since macOS 10.14. Some features will not work on macOS Ventura 13 or later due to changes in System Settings
 
-Version .0.1.2 was tested on macOS 10.12. It may or may not work on other OS versions.
-
-For more usage see this
-[blog post](https://redlinetech.wordpress.com/2017/06/21/disable-system-preference-panes-in-macos/)
+For more usage see this [blog post](https://redlinetech.wordpress.com/2017/06/21/disable-system-preference-panes-in-macos/)
 
 <img src="https://redlinetech.files.wordpress.com/2017/06/disabled.png?w=625">
+
 ##### To install:
 ```bash
 sudo gem install panes
@@ -35,7 +33,7 @@ Panes.Disable("com.apple.preference.network")
 
 ##### Eaxmple 2: Run a ruby script from terminal
 
-Put your commands in a ruby file and run it via the terminal. Example, create a file named "test-command.rb"
+Put your commands in a ruby file and run it via the terminal. For example, create a file named "test-command.rb"
 
 test-command.rb:
 
